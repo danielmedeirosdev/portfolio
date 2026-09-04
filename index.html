@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#11110f" />
   <meta name="description" content="Portfólio de Daniel Medeiros — Product Builder e Full-Stack Developer." />
   <title>Daniel Medeiros — Product Builder</title>
-    <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="icon" type="image/png" href="/favicon.png">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
 
@@ -29,7 +29,7 @@
     .intro { max-width:420px; font-size:18px; line-height:1.45; letter-spacing:-.025em; }
     .hero-note { justify-self:end; text-align:right; color:var(--muted); line-height:1.55; }
     .scroll { display:inline-flex; margin-top:25px; gap:10px; align-items:center; font-family:"DM Mono",monospace; font-size:11px; text-transform:uppercase; letter-spacing:.07em; }
-    .scroll:before { content:"↓"; font-size:17px; color:var(--accent); }
+    .scroll:before { content:""; width:9px; height:14px; display:inline-block; border-left:1.5px solid var(--accent); border-bottom:1.5px solid var(--accent); transform:translateY(-2px) rotate(-45deg); margin-right:2px; }
     section { border-top:1px solid var(--line); padding:26px 0 120px; }
     .section-heading { display:grid; grid-template-columns:16.666% 1fr; margin-bottom:56px; }
     .section-heading h2 { margin:0; font-size:17px; letter-spacing:-.035em; font-weight:600; }
@@ -45,7 +45,9 @@
     .project-side { padding-top:5px; display:flex; flex-direction:column; justify-content:space-between; gap:55px; }
     .role { line-height:1.5; color:#cfccc5; font-size:14px; }
     .role strong { display:block; font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:#77746d; font-family:"DM Mono",monospace; font-weight:400; }
-    .arrow { color:var(--accent); font-size:35px; line-height:1; align-self:flex-end; }
+    .arrow { width:25px; height:25px; align-self:flex-end; position:relative; font-size:0; }
+    .arrow:before { content:""; position:absolute; left:3px; bottom:4px; width:20px; height:1.5px; background:var(--accent); transform:rotate(-45deg); transform-origin:center; }
+    .arrow:after { content:""; position:absolute; top:2px; right:2px; width:10px; height:10px; border-top:1.5px solid var(--accent); border-right:1.5px solid var(--accent); }
     .statement { display:grid; grid-template-columns:16.666% 1fr; padding:130px 0 140px; }
     .statement blockquote { margin:0; max-width:970px; font-family:"Playfair Display",serif; font-size:clamp(43px,6vw,90px); line-height:.99; letter-spacing:-.065em; font-weight:500; }
     .statement blockquote span { color:var(--accent); }
@@ -59,7 +61,8 @@
     .case-grid div { border-top:1px solid var(--line); padding-top:13px; }
     .case-grid h4 { margin:0 0 10px; font:11px "DM Mono",monospace; letter-spacing:.075em; text-transform:uppercase; font-weight:400; color:var(--muted); }
     .case-grid p { margin:0; color:#615f59; font-size:14px; line-height:1.45; }
-    .case-link { display:inline-block; margin-top:24px; padding-bottom:3px; border-bottom:1px solid currentColor; font:11px "DM Mono",monospace; text-transform:uppercase; letter-spacing:.06em; }
+    .case-link { display:inline-flex; align-items:center; gap:8px; margin-top:24px; padding-bottom:3px; border-bottom:1px solid currentColor; font:11px "DM Mono",monospace; text-transform:uppercase; letter-spacing:.06em; }
+    .case-link:after { content:""; width:7px; height:7px; border-top:1px solid currentColor; border-right:1px solid currentColor; transform:translateY(1px); }
     .timeline { display:grid; grid-template-columns:16.666% 1fr; }
     .timeline-list { border-top:1px solid var(--line); }
     .moment { display:grid; grid-template-columns:150px 1fr; border-bottom:1px solid var(--line); padding:20px 0 22px; }
@@ -86,10 +89,12 @@
     .about-detail { color:#c5c2bb; font-size:15px; line-height:1.5; padding-top:5px; }
     footer { background:var(--accent); color:#1b1714; padding:26px 0 38px; }
     .footer-top { display:grid; grid-template-columns:16.666% 1fr; }
-    .contact-link { display:block; margin:44px 0 105px; font-size:clamp(38px,6.7vw,95px); font-weight:600; letter-spacing:-.08em; line-height:.9; border-bottom:2px solid currentColor; width:max-content; max-width:100%; }
+    .contact-link { display:block; margin:44px 0 22px; font-size:clamp(38px,6.7vw,95px); font-weight:600; letter-spacing:-.08em; line-height:.9; border-bottom:2px solid currentColor; width:max-content; max-width:100%; }
+    .contact-actions { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:105px; }
+    .contact-action { font:10px "DM Mono",monospace; letter-spacing:.05em; text-transform:uppercase; padding:8px 10px; border:1px solid rgba(17,17,15,.45); display:inline-flex; align-items:center; gap:7px; }
+    .contact-action:hover { background:rgba(17,17,15,.08); }
     .footer-bottom { display:flex; justify-content:space-between; font:10px "DM Mono",monospace; text-transform:uppercase; letter-spacing:.06em; }
-    .contact-placeholder { font:10px "DM Mono",monospace; letter-spacing:.05em; text-transform:uppercase; padding:8px 10px; border:1px dashed rgba(17,17,15,.45); display:inline-block; margin-top:10px; }
-    @media (max-width:720px) { .shell { width:min(100% - 36px, 1280px); } header { padding:18px 0; } .availability { display:none; } .hero { min-height:640px; padding:64px 0 36px; } .hero-bottom, .section-heading, .project, .statement, .case-study, .timeline, .stack, .about-grid, .footer-top { grid-template-columns:1fr; } .section-heading { gap:15px; margin-bottom:38px; } .hero-note { justify-self:start; text-align:left; } section { padding-bottom:75px; } .projects .shell, .case-studies .shell, .about .shell { padding-top:20px; } .project { gap:18px; padding:28px 0 34px; } .project-side { flex-direction:row; gap:25px; align-items:end; } .arrow { align-self:end; } .statement { gap:27px; padding:85px 0; } .case-study { gap:20px; padding:28px 0 34px; } .case-grid { grid-template-columns:1fr; gap:18px; } .timeline { gap:30px; } .moment { grid-template-columns:92px 1fr; } .capabilities .grid { grid-template-columns:1fr; } .cap { min-height:160px; border-right:0; border-bottom:1px solid var(--line); } .cap h3 { margin-top:38px; } .stack { gap:30px; } .stack-content { grid-template-columns:1fr; gap:30px; } .about-grid { gap:27px; } .contact-link { margin:35px 0 78px; } }
+    @media (max-width:720px) { .shell { width:min(100% - 36px, 1280px); } header { padding:18px 0; } .availability { display:none; } .hero { min-height:640px; padding:64px 0 36px; } .hero-bottom, .section-heading, .project, .statement, .case-study, .timeline, .stack, .about-grid, .footer-top { grid-template-columns:1fr; } .section-heading { gap:15px; margin-bottom:38px; } .hero-note { justify-self:start; text-align:left; } section { padding-bottom:75px; } .projects .shell, .case-studies .shell, .about .shell { padding-top:20px; } .project { gap:18px; padding:28px 0 34px; } .project-side { flex-direction:row; gap:25px; align-items:end; } .arrow { align-self:end; } .statement { gap:27px; padding:85px 0; } .case-study { gap:20px; padding:28px 0 34px; } .case-grid { grid-template-columns:1fr; gap:18px; } .timeline { gap:30px; } .moment { grid-template-columns:92px 1fr; } .capabilities .grid { grid-template-columns:1fr; } .cap { min-height:160px; border-right:0; border-bottom:1px solid var(--line); } .cap h3 { margin-top:38px; } .stack { gap:30px; } .stack-content { grid-template-columns:1fr; gap:30px; } .about-grid { gap:27px; } .contact-link { margin:35px 0 20px; } .contact-actions { margin-bottom:78px; } .footer-bottom { gap:18px; flex-direction:column; } }
   </style>
 </head>
 <body>
@@ -126,7 +131,7 @@
           </div>
           <div class="project-side">
             <div class="role"><strong>Meu papel</strong>Frontend · Arquitetura content-driven · UI/UX · SEO técnico · Deploy</div>
-            <div class="arrow">↗</div>
+            <div class="arrow" aria-hidden="true"></div>
           </div>
         </article>
         <article class="project">
@@ -138,7 +143,7 @@
           </div>
           <div class="project-side">
             <div class="role"><strong>Meu papel</strong>Produto · Frontend · Backend · Banco de dados · Segurança · Deploy</div>
-            <div class="arrow">↗</div>
+            <div class="arrow" aria-hidden="true"></div>
           </div>
         </article>
       </div>
@@ -161,7 +166,7 @@
               <div><h4>Implementação</h4><p>Next.js App Router, componentes reutilizáveis, layout responsivo, galeria com lightbox e integrações de Instagram, e-mail e WhatsApp.</p></div>
               <div><h4>Resultado comprovado</h4><p>Site publicado na Vercel, com domínio próprio, páginas institucionais, manifesto em PDF e base de SEO técnico implementada.</p></div>
             </div>
-            <a class="case-link" href="https://www.jaquemedeirospt.com.br" target="_blank" rel="noreferrer">Visitar projeto ↗</a>
+            <a class="case-link" href="https://www.jaquemedeirospt.com.br" target="_blank" rel="noreferrer">Visitar projeto</a>
           </div>
         </article>
         <article class="case-study">
@@ -174,7 +179,7 @@
               <div><h4>Engenharia</h4><p>React e TypeScript no frontend; Supabase com PostgreSQL, Auth, RLS, Edge Functions e Realtime; Vercel e integração Asaas.</p></div>
               <div><h4>Resultado comprovado</h4><p>Produto publicado em produção. No snapshot auditado, havia uma loja do segmento pet em período de trial; sem receita ou uso intenso confirmados.</p></div>
             </div>
-            <a class="case-link" href="https://www.onefind.com.br" target="_blank" rel="noreferrer">Visitar produto ↗</a>
+            <a class="case-link" href="https://www.onefind.com.br" target="_blank" rel="noreferrer">Visitar produto</a>
           </div>
         </article>
       </div>
@@ -198,6 +203,6 @@
 
     <section class="about" id="sobre"><div class="shell"><div class="about-grid"><div class="section-heading"><div class="index">06</div><h2>Sobre</h2></div><div class="about-copy"><p>Meu desenvolvimento profissional aconteceu principalmente <em>construindo projetos reais.</em></p><p>Em vez de limitar o aprendizado a exercícios isolados, passei a levar ideias até a produção: arquitetura, interface, dados, segurança, deploy e evolução contínua.</p></div><div class="about-detail">Daniel Medeiros é Product Builder e Full-Stack Developer. Hoje, concentra seu trabalho em transformar problemas reais em produtos digitais e em aprofundar a união entre engenharia, produto e negócio.</div></div></div></section>
   </main>
-  <footer id="contato"><div class="shell"><div class="footer-top"><div class="index">07</div><div><div class="eyebrow">Contato</div><a class="contact-link" href="https://wa.me/5519974280798" target="_blank" rel="noreferrer">+55 19 97428-0798</a><div class="contact-placeholder">WhatsApp</div></div></div><div class="footer-bottom"><span>Daniel Medeiros © 2026</span><span>Product Builder · Full-Stack Developer</span></div></div></footer>
+  <footer id="contato"><div class="shell"><div class="footer-top"><div class="index">07</div><div><div class="eyebrow">Contato</div><a class="contact-link" href="https://wa.me/5519974280798" target="_blank" rel="noreferrer">+55 19 97428-0798</a><div class="contact-actions"><a class="contact-action" href="https://wa.me/5519974280798" target="_blank" rel="noreferrer">WhatsApp</a><a class="contact-action" href="https://github.com/danielmedeirosdev" target="_blank" rel="noreferrer">GitHub</a></div></div></div><div class="footer-bottom"><span>Daniel Medeiros © 2026</span><span>Product Builder · Full-Stack Developer</span></div></div></footer>
 </body>
 </html>
