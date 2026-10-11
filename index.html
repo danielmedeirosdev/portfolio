@@ -45,9 +45,9 @@
     .project-side { padding-top:5px; display:flex; flex-direction:column; justify-content:space-between; gap:55px; }
     .role { line-height:1.5; color:#cfccc5; font-size:14px; }
     .role strong { display:block; font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:#77746d; font-family:"DM Mono",monospace; font-weight:400; }
-    .arrow { display:block; width:25px; height:25px; align-self:flex-end; position:relative; font-size:0; }
-    .arrow:before { content:""; position:absolute; left:3px; bottom:4px; width:20px; height:1.5px; background:var(--accent); transform:rotate(-45deg); transform-origin:center; }
-    .arrow:after { content:""; position:absolute; top:2px; right:2px; width:10px; height:10px; border-top:1.5px solid var(--accent); border-right:1.5px solid var(--accent); }
+    .arrow { width:28px; height:28px; align-self:flex-end; display:inline-flex; align-items:center; justify-content:center; color:var(--accent); transition:transform .2s ease; }
+    .arrow:hover, .arrow:focus-visible { transform:translate(3px,-3px); }
+    .arrow svg { width:26px; height:26px; display:block; }
     .statement { display:grid; grid-template-columns:16.666% 1fr; padding:130px 0 140px; }
     .statement blockquote { margin:0; max-width:970px; font-family:"Playfair Display",serif; font-size:clamp(43px,6vw,90px); line-height:.99; letter-spacing:-.065em; font-weight:500; }
     .statement blockquote span { color:var(--accent); }
@@ -131,7 +131,7 @@
           </div>
           <div class="project-side">
             <div class="role"><strong>Meu papel</strong>Frontend · Arquitetura content-driven · UI/UX · SEO técnico · Deploy</div>
-            <a class="arrow" href="https://www.jaquemedeirospt.com.br" target="_blank" rel="noopener noreferrer" aria-label="Visitar site Jaque Medeiros"></a>
+            <a class="arrow" href="https://www.jaquemedeirospt.com.br" target="_blank" rel="noopener noreferrer" aria-label="Visitar site Jaque Medeiros"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19 19 5M7 5h12v12"/></svg></a>
           </div>
         </article>
         <article class="project">
@@ -143,7 +143,7 @@
           </div>
           <div class="project-side">
             <div class="role"><strong>Meu papel</strong>Produto · Frontend · Backend · Banco de dados · Segurança · Deploy</div>
-            <a class="arrow" href="https://www.onefind.com.br" target="_blank" rel="noopener noreferrer" aria-label="Visitar ONEFIND"></a>
+            <a class="arrow" href="https://www.onefind.com.br" target="_blank" rel="noopener noreferrer" aria-label="Visitar ONEFIND"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19 19 5M7 5h12v12"/></svg></a>
           </div>
         </article>
       </div>
