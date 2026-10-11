@@ -45,7 +45,7 @@
     .project-side { padding-top:5px; display:flex; flex-direction:column; justify-content:space-between; gap:55px; }
     .role { line-height:1.5; color:#cfccc5; font-size:14px; }
     .role strong { display:block; font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:#77746d; font-family:"DM Mono",monospace; font-weight:400; }
-    .arrow { width:25px; height:25px; align-self:flex-end; position:relative; font-size:0; }
+    .arrow { display:block; width:25px; height:25px; align-self:flex-end; position:relative; font-size:0; }
     .arrow:before { content:""; position:absolute; left:3px; bottom:4px; width:20px; height:1.5px; background:var(--accent); transform:rotate(-45deg); transform-origin:center; }
     .arrow:after { content:""; position:absolute; top:2px; right:2px; width:10px; height:10px; border-top:1.5px solid var(--accent); border-right:1.5px solid var(--accent); }
     .statement { display:grid; grid-template-columns:16.666% 1fr; padding:130px 0 140px; }
@@ -131,19 +131,19 @@
           </div>
           <div class="project-side">
             <div class="role"><strong>Meu papel</strong>Frontend · Arquitetura content-driven · UI/UX · SEO técnico · Deploy</div>
-            <div class="arrow" aria-hidden="true"></div>
+            <a class="arrow" href="https://www.jaquemedeirospt.com.br" target="_blank" rel="noopener noreferrer" aria-label="Visitar site Jaque Medeiros"></a>
           </div>
         </article>
         <article class="project">
           <div class="eyebrow">Projeto 02<br>Produto próprio</div>
           <div>
             <h3 class="project-title">ONEFIND</h3>
-            <p class="project-description">SaaS multi-tenant de agendamento para negócios de serviços. Evoluiu do FIND, focado em barbearias, para uma plataforma preparada para segmentos como barbearia e pet shop.</p>
+            <p class="project-description">SaaS multi-tenant de agendamento para negócios de serviços. Evoluiu do FIND, focado em barbearias, para uma plataforma preparada para operações de banho e tosa.</p>
             <div class="tags"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Supabase</span><span class="tag">PostgreSQL</span><span class="tag">Vercel</span><span class="tag">Asaas</span></div>
           </div>
           <div class="project-side">
             <div class="role"><strong>Meu papel</strong>Produto · Frontend · Backend · Banco de dados · Segurança · Deploy</div>
-            <div class="arrow" aria-hidden="true"></div>
+            <a class="arrow" href="https://www.onefind.com.br" target="_blank" rel="noopener noreferrer" aria-label="Visitar ONEFIND"></a>
           </div>
         </article>
       </div>
@@ -172,10 +172,10 @@
         <article class="case-study">
           <div class="eyebrow">Case 02<br>ONEFIND / FIND</div>
           <div>
-            <h3>Da agenda de barbearias a uma plataforma de serviços.</h3>
+            <h3>Da agenda a uma plataforma de gestão pet.</h3>
             <p class="case-study-intro">Construção e evolução de um produto de agendamento que reúne página pública, reservas, painel do estabelecimento, autenticação, dados isolados por tenant, trial e assinatura.</p>
             <div class="case-grid">
-              <div><h4>Produto</h4><p>O FIND começou focado em barbearias; o ONEFIND ampliou a arquitetura para os segmentos de barbearia e pet shop.</p></div>
+              <div><h4>Produto</h4><p>O ONEFIND evoluiu para uma plataforma voltada à gestão de banho e tosa.</p></div>
               <div><h4>Engenharia</h4><p>React e TypeScript no frontend; Supabase com PostgreSQL, Auth, RLS, Edge Functions e Realtime; Vercel e integração Asaas.</p></div>
               <div><h4>Resultado comprovado</h4><p>Produto publicado em produção. No snapshot auditado, havia uma loja do segmento pet em período de trial; sem receita ou uso intenso confirmados.</p></div>
             </div>
